@@ -1,0 +1,88 @@
+body {
+  padding: 50px;
+}
+
+.form-row {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.form-row label {
+  display: block;
+}
+
+.form-group {
+  flex: 1;
+}
+
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.8rem;
+}
+
+.form-group label {
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.form-group--central {
+  margin: 0 10px;
+}
+
+.button {
+  margin-left: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: green;
+  border-radius: 20px;
+  width: 100px;
+  text-align: center;
+  padding: 5px;
+  color: white;
+}
+
+.button[disabled] {
+  background-color: grey;
+}
+.list {
+  margin-bottom: 30px;
+}
+.item {
+  display: grid;
+  grid-template-columns: 70px 250px 250px auto;
+  grid-column-gap: 10px;
+  align-items: center;
+  padding: 20px 5px;
+  background-color: #efefef;
+}
+.item:hover {
+  background-color: #0000000f;
+}
+
+.item__column {
+  flex: 1;
+  text-align: left;
+}
+
+.select {
+  width: 35px;
+  height: 35px;
+  border: 1px solid black;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.select:hover {
+  border-color: red;
+  color: red;
+  cursor: pointer;
+}
