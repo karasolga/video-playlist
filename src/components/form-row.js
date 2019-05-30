@@ -6,7 +6,11 @@ const initialState = {
   artist: '',
   videoUrl: ''
 }
-
+const config = [
+  { label: 'title', name: 'title' },
+  { label: 'artist', name: 'artist' },
+  { label: 'video url', name: 'videoUrl' }
+]
 function FormRow({ addItem }) {
   const [state, setState] = useState(initialState)
 
@@ -20,33 +24,17 @@ function FormRow({ addItem }) {
   }
   return (
     <div className="form-row">
-      <div className="form-group">
-        <label htmlFor="title">title</label>
-        <input
-          type="text"
-          name="title"
-          onChange={evt => updateState(evt.target)}
-          value={state.title}
-        />
-      </div>
-      <div className="form-group form-group--central">
-        <label htmlFor="artist">artist</label>
-        <input
-          type="text"
-          name="artist"
-          onChange={evt => updateState(evt.target)}
-          value={state.artist}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="videoUrl">video url</label>
-        <input
-          type="text"
-          name="videoUrl"
-          onChange={evt => updateState(evt.target)}
-          value={state.videoUrl}
-        />
-      </div>
+      {config.map((item, idx) => (
+        <div className="form-group" key={idx}>
+          <label htmlFor={item.name}>{item.label}</label>
+          <input
+            type="text"
+            name={item.name}
+            onChange={evt => updateState(evt.target)}
+            value={state[item.name]}
+          />
+        </div>
+      ))}
       <button
         className="button"
         disabled={!isValid(state.videoUrl)}
