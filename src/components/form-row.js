@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import FormInput from './form-input'
 
 const isValid = videoUrl => Boolean(videoUrl)
 const initialState = {
@@ -6,11 +7,13 @@ const initialState = {
   artist: '',
   videoUrl: ''
 }
+
 const config = [
   { label: 'title', name: 'title' },
   { label: 'artist', name: 'artist' },
   { label: 'video url', name: 'videoUrl' }
 ]
+
 function FormRow({ addItem }) {
   const [state, setState] = useState(initialState)
 
@@ -25,15 +28,13 @@ function FormRow({ addItem }) {
   return (
     <div className="form-row">
       {config.map((item, idx) => (
-        <div className="form-group" key={idx}>
-          <label htmlFor={item.name}>{item.label}</label>
-          <input
-            type="text"
-            name={item.name}
-            onChange={evt => updateState(evt.target)}
-            value={state[item.name]}
-          />
-        </div>
+        <FormInput
+          key={idx}
+          label={item.label}
+          name={item.name}
+          onChange={updateState}
+          value={state[item.name]}
+        />
       ))}
       <button
         className="button"
