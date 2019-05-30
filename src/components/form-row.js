@@ -1,23 +1,23 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-const isValid = videoUrl => Boolean(videoUrl);
+const isValid = videoUrl => Boolean(videoUrl)
 const initialState = {
-  title: "",
-  artist: "",
-  videoUrl: ""
-};
+  title: '',
+  artist: '',
+  videoUrl: ''
+}
 
 function FormRow({ addItem }) {
-  const [state, setState] = useState(initialState);
+  const [state, setState] = useState(initialState)
 
   const updateState = target => {
-    setState({ ...state, [target.name]: target.value });
-  };
+    setState({ ...state, [target.name]: target.value })
+  }
 
   const onSubmit = () => {
-    addItem(state);
-    setState(initialState);
-  };
+    addItem(state)
+    setState(initialState)
+  }
   return (
     <div className="form-row">
       <div className="form-group">
@@ -55,7 +55,7 @@ function FormRow({ addItem }) {
         Add
       </button>
     </div>
-  );
+  )
 }
 
-export default FormRow;
+export default FormRow

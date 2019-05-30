@@ -1,8 +1,8 @@
-import React from "react";
-import Player from "./player";
+import React from 'react'
+import Player from './player'
 
-describe("Player", () => {
-  it("renders correctly", () => {
-    expect(Player).toMatchSnapshot();
-  });
-});
+describe('Player', () => {
+  it('renders correctly', () => {
+    expect(Player).toMatchSnapshot()
+  })
+})

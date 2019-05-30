@@ -1,5 +1,5 @@
-import React from "react";
-import Item from "./item";
+import React from 'react'
+import Item from './item'
 
 function Playlist({ items, setSelected }) {
   return (
@@ -8,7 +8,7 @@ function Playlist({ items, setSelected }) {
         <Item item={item} key={idx} setSelected={() => setSelected(idx)} />
       ))}
     </div>
-  );
+  )
 }
 
-export default Playlist;
+export default Playlist

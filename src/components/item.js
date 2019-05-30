@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 function Item({ item, setSelected }) {
   return (
@@ -10,7 +10,7 @@ function Item({ item, setSelected }) {
       <div className="item__column">{item.artist}</div>
       <div className="item__column">{item.videoUrl}</div>
     </div>
-  );
+  )
 }
 
-export default Item;
+export default Item

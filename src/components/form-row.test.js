@@ -1,8 +1,8 @@
-import React from "react";
-import FormRow from "./form-row";
+import React from 'react'
+import FormRow from './form-row'
 
-describe("FormRow", () => {
-  it("renders correctly", () => {
-    expect(FormRow).toMatchSnapshot();
-  });
-});
+describe('FormRow', () => {
+  it('renders correctly', () => {
+    expect(FormRow).toMatchSnapshot()
+  })
+})
