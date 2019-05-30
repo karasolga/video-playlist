@@ -16,6 +16,7 @@ body {
 
 .form-group {
   flex: 1;
+  margin-right: 10px;
 }
 
 .form-row input,
@@ -28,10 +29,6 @@ body {
 .form-group label {
   text-transform: capitalize;
   margin-bottom: 5px;
-}
-
-.form-group--central {
-  margin: 0 10px;
 }
 
 .button {
