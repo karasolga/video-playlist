@@ -7,10 +7,12 @@ import ITEMS from './constants/items'
 
 const initialState = { items: ITEMS }
 const reducer = (state, action) => {
-  console.log('dispatch', state, action, action.item)
   switch (action.type) {
     case 'add':
       return { items: [...state.items, action.item] }
+    case 'delete':
+      state.items.splice(action.idx, 1)
+      return { items: state.items }
     default:
       return state
   }
@@ -24,7 +26,11 @@ function App() {
       <h1>Add a video to your playlist</h1>
       <FormRow addItem={item => dispatch({ type: 'add', item })} />
       <h2>Your playlist</h2>
-      <Playlist items={state.items} setSelected={setSelectedIndex} />
+      <Playlist
+        items={state.items}
+        setSelected={setSelectedIndex}
+        onDelete={idx => dispatch({ type: 'delete', idx })}
+      />
       {state.items.length ? (
         <Player
           item={state.items[selectedIndex]}
